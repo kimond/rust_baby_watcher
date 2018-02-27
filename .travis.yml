@@ -1,0 +1,9 @@
+language: rust
+rust:
+  - stable
+  - beta
+
+script:
+  - cargo build --verbose --all
+
+cache: cargo

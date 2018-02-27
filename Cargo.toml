@@ -1,0 +1,8 @@
+[package]
+name = "baby_watcher"
+version = "0.1.0"
+authors = ["Kim Desrosiers <kimdesro@gmail.com>"]
+
+[dependencies]
+rscam = "0.5.3"
+x264 = "0.1.1"

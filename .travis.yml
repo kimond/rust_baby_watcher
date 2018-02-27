@@ -7,3 +7,8 @@ script:
   - cargo build --verbose --all
 
 cache: cargo
+
+addons:
+  apt:
+    packages:
+      - x264

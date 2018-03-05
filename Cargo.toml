@@ -6,3 +6,7 @@ authors = ["Kim Desrosiers <kimdesro@gmail.com>"]
 [dependencies]
 rscam = "0.5.3"
 x264 = "0.1.1"
+rocket = "0.3.6"
+rocket_codegen = "0.3.6"
+gstreamer = "0.10.2"
+glib = "0.4.1"

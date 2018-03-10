@@ -9,6 +9,9 @@ use std::thread;
 use std::io;
 use std::fs::File;
 use std::io::prelude::*;
+use rocket::response::Stream;
+use rocket::response::Response;
+
 
 #[get("/launch_stream")]
 fn launch_stream() -> &'static str {
@@ -20,6 +23,9 @@ fn launch_stream() -> &'static str {
 
 #[get("/stream")]
 fn get_stream(){
+    let response = Response::build()
+        .streamed_body(File::open("fade.h264").unwrap())
+        .finalize();
 }
 
 

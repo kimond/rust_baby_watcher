@@ -22,10 +22,15 @@ fn launch_stream() -> &'static str {
 }
 
 #[get("/stream")]
-fn get_stream(){
+fn get_stream<'r>() -> Response<'r>{
     let response = Response::build()
-        .streamed_body(File::open("fade.h264").unwrap())
+        .raw_status(206, "Partial Content")
+        .raw_header("Connection", "keep-alive")
+        .raw_header("Accept-Ranges", "bytes")
+        .raw_header("Content-Type", "video/mp4")
+        .streamed_body(File::open("small.mp4").unwrap())
         .finalize();
+    response
 }
 
 
